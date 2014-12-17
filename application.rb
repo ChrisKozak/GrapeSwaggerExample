@@ -4,9 +4,15 @@ require 'grape-swagger'
 
 module Example
 
+  # class TinklyBell < Grape::Entity
+  #   expose :tinkle, documentation: {type: String, desc: 'TinkleTinkle'}
+  # end
+
   class Kitty < Grape::Entity
     expose :kitty, documentation: {type: String, desc: 'The type of kitty you would like to say hello to'}
     expose :meow, documentation: {type: String, desc: 'Type of meow, not required'}
+    # expose :bells, using: TinklyBell,
+    #        documentation: { type: TinklyBell, desc: 'Tinkleh bells that this kitteh is wearing', param_type: 'body'}
   end
 
   class Application < Grape::API
